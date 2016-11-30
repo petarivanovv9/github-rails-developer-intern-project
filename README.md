@@ -26,4 +26,4 @@ Your submission will be evaluated against the following criteria:
 
 ## Submission
 
-To submit your work, please deploy your application to [Heroku](https://heroku.com) using the free tier and then mention the `@education-interview-exercises/rails-developer-intern-reviewers` team to let us know you're ready to have us take a look at your code. Don't forget to include a link to your production deployment.
+To submit your work, please deploy your application to [Heroku](https://heroku.com) using the free tier and email us a link to your app deployed in production along with a link to your repository to let us know you're ready to have us take a look at your code.
