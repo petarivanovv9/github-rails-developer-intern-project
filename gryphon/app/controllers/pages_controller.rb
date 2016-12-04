@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   end
 
   def profile
+    client = Octokit::Client.new(:access_token => current_user.access_token, :auto_paginate => true)
+    @user = client.user
+    @user.repos = client.repos.sort_by { |k| k["updated_at"] }.reverse
   end
 
   private

@@ -1,7 +1,18 @@
-<h1>Pages#profile</h1>
+<h2>Hello <%= current_user.nickname %></h2>
 
-<h3>Hello <%= current_user.nickname %></h3>
+<img src="<%= @user.avatar_url %>">
 
-<p>User Profile Page</p>
+<p>Name: <%= @user.name %></p>
+<p>Number of followers: <%= @user.followers %></p>
+<p>Number of follwoing: <%= @user.following %></p>
+<p>Email: <%= @user.email %></p>
+<p>Number of public repositories: <%= @user.public_repos %></p>
+<p>Number of repositories: <%= @user.repos.size %></p>
+
+Last updated repositories:
+<% @user.repos.each do |repo| %>
+  <p><%= repo.name %></p>
+<% end %>
+
 
 <%= link_to "Logout", logout_path %>
