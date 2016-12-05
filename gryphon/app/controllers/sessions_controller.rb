@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
       user.access_token = auth_hash[:credentials][:token]
       user.nickname     = auth_hash[:info][:nickname]
     end
+    user.update_attributes({:access_token => auth_hash[:credentials][:token]})
 
     session[:user_id] = user.id
 
