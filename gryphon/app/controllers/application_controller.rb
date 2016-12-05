@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -8,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    !current_user.nil?
   end
 end

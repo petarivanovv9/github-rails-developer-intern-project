@@ -41,6 +41,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'guard-rspec', require: false
   gem 'rspec-rails'
+  gem 'rubocop',   require: false
 end
 
 group :development do
