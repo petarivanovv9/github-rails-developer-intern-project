@@ -9,10 +9,10 @@ RSpec.describe PagesController, type: :controller do
 
     it 'redirects to the profile page if the user is already logged in' do
       user = User.new
-      user.uid = rand(1..1_100)
+      user.uid = rand(1..1_100_000).to_s
       user.access_token = SecureRandom.hex(20)
       user.save
-      
+
       sign_in(user)
 
       get :home
