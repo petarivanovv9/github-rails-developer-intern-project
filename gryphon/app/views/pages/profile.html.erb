@@ -1,15 +1,36 @@
-<h2>Hello <%= current_user.nickname %></h2>
+<div class="container">
 
-<img src="<%= @user.avatar_url %>">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="content profile">
+        <h2>Welcome <%= @user.name %></h2>
+      </div>
+    </div>
+  </div>
 
-<p>Name: <%= @user.name %></p>
-<p>Number of followers: <%= @user.followers %></p>
-<p>Number of follwoing: <%= @user.following %></p>
-<p>Email: <%= @user.email %></p>
-<p>Number of public repositories: <%= @user.public_repos %></p>
-<p>Number of repositories: <%= @user.repos.size %></p>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="<%= @user.avatar_url %>" class="user-image img-thumbnail">
+    </div>
 
-Last updated repositories:
-<% @user.repos.each do |repo| %>
-  <p><%= repo.name %></p>
-<% end %>
+    <div class="col-md-7">
+      <h3>User profile information</h3>
+      <p>Nickname: <%= current_user.nickname %></p>
+      <p>Email: <%= @user.email %></p>
+      <p>Number of followers: <%= @user.followers %></p>
+      <p>Number of follwoing: <%= @user.following %></p>
+      <p>Number of public repositories: <%= @user.public_repos %></p>
+      <p>Number of repositories: <%= @user.repos.size %></p>
+    </div>
+  </div>
+
+    <div class="row">
+      <h4>Last 10 updated repositories:</h4>
+      <% @user.repos[0..9].each do |repo| %>
+        <%= repo.name %></p>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

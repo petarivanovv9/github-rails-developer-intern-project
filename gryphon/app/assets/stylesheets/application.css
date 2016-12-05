@@ -43,6 +43,10 @@ h1 {
                  0px 18px 23px rgba(0,0,0,0.1);
 }
 
+.profile {
+  padding-top: 5%;
+}
+
 hr {
   width: 400px;
   border-top: 1px solid #f8f8f8;
@@ -51,4 +55,8 @@ hr {
 
 #logout {
   color: #777;
+}
+
+.user-image {
+  width: 50%;
 }
