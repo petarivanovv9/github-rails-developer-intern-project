@@ -17,31 +17,6 @@
 # users commonly want.
 #
 
-require File.expand_path('../../config/environment', __FILE__)
-
-OmniAuth.config.test_mode = true
-
-omniauth_hash = {
-  'provider' => 'github',
-  'uid'      => rand(1..1_100_000).to_s,
-  'info'     => {
-    'name'     => 'petar',
-    'email'    => 'hi@petarcoding.com',
-    'nickname' => 'PetarCoding'
-  },
-  'credentials' => {
-    'token' => SecureRandom.hex(20)
-  },
-  'extra' => {
-    'raw_info' => {
-      'location'    => 'Sofia',
-      'gravatar_id' => '123456789'
-    }
-  }
-}
-
-OmniAuth.config.add_mock(:github, omniauth_hash)
-
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -78,11 +53,11 @@ RSpec.configure do |config|
     session[:user_id] = user.id
   end
 
-  # def create_user
-  #   user = User.new
-  #   user.uid = rand(1..1_100)
-  #   user.access_token = SecureRandom.hex(20)
-  #   user.save
-  #   return user
-  # end
+  def sign_out
+    session.delete(:user_id)
+  end
+
+  def create_user(auth_hash)
+    User.create(uid: auth_hash[:uid], access_token: auth_hash[:credentials][:token])
+  end
 end
