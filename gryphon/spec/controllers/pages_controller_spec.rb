@@ -20,14 +20,9 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to redirect_to(pages_profile_path)
     end
 
-    it 'does not display logout button if the user is not logged in' do
+    it 'doesn\'t display logout button if the user is not logged in' do
       get :home
       expect(response.body).to_not include 'Logout'
     end
   end
-
-  # describe '#logout_button' do
-    # it 'displays logout button if the user is logged in' do
-    # end
-  # end
 end
