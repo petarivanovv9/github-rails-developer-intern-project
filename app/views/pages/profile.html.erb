@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="content profile">
+        <h2>Welcome <%= @user.name %> (<%= current_user.nickname %>)</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <img src="<%= @user.avatar_url %>" class="user-image img-thumbnail">
+    </div>
+
+    <div class="col-md-7">
+      <h3>User profile information</h3>
+      <div class="user-info">
+        <p>Email: <%= @user.email %></p>
+        <p>Followers: <%= @user.followers %></p>
+        <p>Follwoing: <%= @user.following %></p>
+        <p>Public repositories: <%= @user.public_repos %></p>
+        <p>Public gists: <%= @user.public_gists %></p>
+        <p>Repositories: <%= @user.repos.size %></p>
+        <p>Location: <%= @user.location %></p>
+        <p>Joined on: <%= @user.created_at.strftime("%b %d, %Y") %></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <h3>Last 10 updated public repositories:</h3>
+      <ul class="public-repos-list">
+        <% @user.repos[0..9].each do |repo| %>
+          <li>
+            <p>
+              <span class="public-repo-name"><%= repo.name %></span>:
+              <span class="public-repo-language"><%= repo.language %></span>
+            </p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
