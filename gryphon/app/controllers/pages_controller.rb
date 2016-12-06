@@ -9,12 +9,19 @@ class PagesController < ApplicationController
   def profile
     client = Octokit::Client.new(access_token: current_user.access_token, auto_paginate: true)
     @user = client.user
-    @user.repos = client.repos.sort_by { |k| k['updated_at'] }.reverse
+    @user.repos = get_filtered_public_repos(client.repos)
   end
 
   private
 
   def ensure_logged_in
     redirect_to :root unless logged_in?
+  end
+
+  # get all public repos that are last updated
+  def get_filtered_public_repos(repos)
+    public_repos = repos.reject { |repo| repo['private'] }
+    sorted_public_repos = public_repos.sort_by { |repo| repo['updated_at'] }
+    sorted_public_repos.reverse
   end
 end
