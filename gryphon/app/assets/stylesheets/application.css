@@ -34,6 +34,9 @@ h1 {
   font-size: 5em;
 }
 
+.btn {
+  text-shadow: none;
+}
 
 .content {
   padding-top: 25%;
