@@ -34,8 +34,8 @@
         <% @user.repos[0..9].each do |repo| %>
           <li>
             <p>
-              <span class="public-repo-name"><%= repo.name.capitalize %></span>:
-              <span class="public-repo-language"><%= repo.language.capitalize %></span>
+              <span class="public-repo-name"><%= repo.name %></span>:
+              <span class="public-repo-language"><%= repo.language %></span>
             </p>
           </li>
         <% end %>
