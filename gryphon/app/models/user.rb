@@ -2,5 +2,5 @@
 class User < ApplicationRecord
   validates :access_token, presence: true, uniqueness: true
 
-  validates :uid, presence: true
+  validates :uid, presence: true, uniqueness: true
 end
