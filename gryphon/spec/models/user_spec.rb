@@ -6,14 +6,7 @@ RSpec.describe User, type: :model do
 
   describe '#create_from_github_auth_hash' do
     it 'creates a user' do
-      expected = expect do
-        User.create(
-          uid:          github_omniauth_hash[:uid],
-          access_token: github_omniauth_hash[:credentials][:token]
-        )
-      end
-
-      expected.to change { User.count }.by(1)
+      expect { create_user(github_omniauth_hash) }.to change { User.count }.by(1)
     end
   end
 
@@ -33,10 +26,7 @@ RSpec.describe User, type: :model do
 
   describe '#find_by_github_auth_hash' do
     it 'finds the correct user' do
-      User.create(
-        uid:          github_omniauth_hash[:uid],
-        access_token: github_omniauth_hash[:credentials][:token]
-      )
+      create_user(github_omniauth_hash)
 
       located_user = User.find_by(uid: github_omniauth_hash[:uid])
 
