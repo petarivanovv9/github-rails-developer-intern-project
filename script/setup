@@ -1,6 +1,9 @@
 #!/bin/sh
 
 
+set -e
+
+
 cd "$(dirname "$0")/.."
 
 
@@ -14,7 +17,9 @@ bin/rake db:reset
 if test -z "$RAILS_ENV" && test -z "$RACK_ENV"; then
 
   if ! test -r ".env"; then
+
     cp .env-example .env
+
   fi
 
 fi
