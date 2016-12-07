@@ -30,6 +30,8 @@ To submit your work, please deploy your application to [Heroku](https://heroku.c
 
 ## Get started
 
+The application is deployed in production to Heroku and it's located [here] (https://gryphon-github-intern.herokuapp.com)
+
 ### 1. Installing a Local Server
 
 * First, you need to install Ruby 2.3.3
