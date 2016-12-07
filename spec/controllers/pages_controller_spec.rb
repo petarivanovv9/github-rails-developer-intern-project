@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
   let(:github_omniauth_hash) { OmniAuth.config.mock_auth[:github] }
-  let(:user) { create_user(github_omniauth_hash) }
+  let(:user) { User.create_from_auth_hash(github_omniauth_hash) }
 
   describe 'GET #home' do
     it 'returns success' do

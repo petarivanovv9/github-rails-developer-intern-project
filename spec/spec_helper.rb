@@ -56,8 +56,4 @@ RSpec.configure do |config|
   def sign_out
     session.delete(:user_id)
   end
-
-  def create_user(auth_hash)
-    User.create(uid: auth_hash[:uid], access_token: auth_hash[:credentials][:token])
-  end
 end
