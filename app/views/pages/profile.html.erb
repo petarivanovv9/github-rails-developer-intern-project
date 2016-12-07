@@ -8,34 +8,38 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row info">
+    <div class="col-md-4 img-col">
       <img src="<%= @user.avatar_url %>" class="user-image img-thumbnail">
     </div>
 
-    <div class="col-md-7">
-      <h3>User profile information</h3>
+    <div class="col-md-8">
+      <h3 class="header-profile">User profile information</h3>
       <div class="user-info">
-        <p>Email: <%= @user.email %></p>
-        <p>Followers: <%= @user.followers %></p>
-        <p>Follwoing: <%= @user.following %></p>
-        <p>Public repositories: <%= @user.public_repos.size %></p>
-        <p>Public gists: <%= @user.public_gists %></p>
-        <p>All Repositories: <%= @user.num_private_repos %></p>
-        <p>Location: <%= @user.location %></p>
-        <p>Joined on: <%= @user.created_at.strftime("%b %d, %Y") %></p>
+        <div class="col-md-4 info-col">
+          <p><span class="field-name">All Repositories:</span> <span class="field-attr"><%= @user.num_private_repos %></span></p>
+          <p><span class="field-name">Email:</span> <span class="field-attr"><%= @user.email %></span></p>
+          <p><span class="field-name">Location:</span> <span class="field-attr"><%= @user.location %></span></p>
+          <p><span class="field-name">Joined on:</span> <span class="field-attr"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
+        </div>
+        <div class="col-md-4 info-col">
+          <p><span class="field-name">Public repositories:</span> <span class="field-attr"><%= @user.public_repos.size %></span></p>
+          <p><span class="field-name">Followers:</span> <span class="field-attr"><%= @user.followers %></span></p>
+          <p><span class="field-name">Follwoing:</span> <span class="field-attr"><%= @user.following %></span></p>
+          <p><span class="field-name">Public gists:</span> <span class="field-attr"><%= @user.public_gists %></span></p>
+        </div>
       </div>
     </div>
   </div>
 
-    <div class="row">
+    <div class="row info">
       <h3>Last 10 updated public repositories:</h3>
       <ul class="public-repos-list">
         <% @user.public_repos[0..9].each do |repo| %>
           <li>
             <p>
-              <span class="public-repo-name"><%= repo.name %></span>:
-              <span class="public-repo-language"><%= repo.language %></span>
+              <span class="field-name"><%= repo.name %></span>:
+              <span class="field-attr"><%= repo.language %></span>
             </p>
           </li>
         <% end %>

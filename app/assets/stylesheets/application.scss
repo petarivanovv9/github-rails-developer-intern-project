@@ -49,7 +49,11 @@ h1 {
 }
 
 .profile {
-  padding-top: 5%;
+  padding-top: 7%;
+}
+
+.header-profile {
+  text-align: center;
 }
 
 hr {
@@ -62,12 +66,26 @@ hr {
   color: #777;
 }
 
+.info {
+  padding-top: 3%;
+}
+
+.img-col {
+  text-align: center;
+}
+
 .user-image {
   width: 50%;
 }
 
 .user-info {
   font-size: 15px;
+  text-align: center;
+}
+
+.info-col {
+  width: 50%;
+  padding-top: 5px;
 }
 
 .public-repos-list {
@@ -75,11 +93,11 @@ hr {
   font-size: 15px;
 }
 
-.public-repo-name {
+.field-name {
   font-weight: bold;
 }
 
-.public-repo-language {
+.field-attr {
   font-style: italic;
   font-weight: lighter;
 }
