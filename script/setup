@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+cd "$(dirname "$0")/.."
+
+
+script/dependencies
+
+
+## Reset database
+echo "===>>> Setting up DB..."
+bin/rake db:reset
+
+if test -z "$RAILS_ENV" && test -z "$RACK_ENV"; then
+
+  if ! test -r ".env"; then
+    cp .env-example .env
+  fi
+
+fi
+
+
+echo "===>>> Your app is almost ready!"
+echo "===>>> Please make sure you fill out your .env file."
