@@ -9,7 +9,8 @@ class PagesController < ApplicationController
   def profile
     client = Octokit::Client.new(access_token: current_user.access_token, auto_paginate: true)
     @user = client.user
-    @user.repos = get_filtered_public_repos(client.repos)
+    @user.num_private_repos = client.repos.size
+    @user.public_repos = get_filtered_public_repos(client.repos)
   end
 
   private

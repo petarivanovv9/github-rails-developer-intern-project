@@ -19,9 +19,9 @@
         <p>Email: <%= @user.email %></p>
         <p>Followers: <%= @user.followers %></p>
         <p>Follwoing: <%= @user.following %></p>
-        <p>Public repositories: <%= @user.public_repos %></p>
+        <p>Public repositories: <%= @user.public_repos.size %></p>
         <p>Public gists: <%= @user.public_gists %></p>
-        <p>Repositories: <%= @user.repos.size %></p>
+        <p>All Repositories: <%= @user.num_private_repos %></p>
         <p>Location: <%= @user.location %></p>
         <p>Joined on: <%= @user.created_at.strftime("%b %d, %Y") %></p>
       </div>
@@ -31,7 +31,7 @@
     <div class="row">
       <h3>Last 10 updated public repositories:</h3>
       <ul class="public-repos-list">
-        <% @user.repos[0..9].each do |repo| %>
+        <% @user.public_repos[0..9].each do |repo| %>
           <li>
             <p>
               <span class="public-repo-name"><%= repo.name %></span>:
