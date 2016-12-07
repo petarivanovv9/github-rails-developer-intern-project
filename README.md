@@ -35,7 +35,7 @@ To submit your work, please deploy your application to [Heroku](https://heroku.c
 * First, you need to install Ruby 2.3.3
 * Next, you need to have PostgreSQL installed
 * Now, let's install the gems
-```vash
+```bash
 gem install bundler && rbenv rehash
 ```
 
@@ -48,6 +48,11 @@ script/setup
 ```
 * Fill out your `.env` file (created by `script/setup`).
 
+ENV Variable | Description |
+:-------------------|:-----------------|
+`GITHUB_CLIENT_ID`| the GitHub Application Client ID.
+`GITHUB_CLIENT_SECRET`| the GitHub Application Client Secret.
+`TEST_GITHUB_TOKEN` | The [Personal Access Token](https://github.com/blog/1509-personal-api-tokens) for the user (only for testing or running the specs)
 
 #### Testing the application
 
