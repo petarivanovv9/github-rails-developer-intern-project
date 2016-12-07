@@ -4,11 +4,9 @@
 cd "$(dirname "$0")/.."
 
 
-## Ensures all dependencies are installed locally.
-echo "===>>> Installing gem dependencies..."
-bundle install --without production
+script/dependencies
 
 
 ## Run all database migrations to ensure everything is up to date.
-echo "===>>> Updating db..."
+echo "===>>> Updating DB..."
 bin/rake db:create db:migrate
