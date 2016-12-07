@@ -9,12 +9,15 @@ cd "$(dirname "$0")/.."
 
 if [ "$RAILS_ENV" = "test" ] || [ "$RACK_ENV" = "test" ]; then
 
+  # Set up application for the first time after cloning,
+  # or set it back to the initial first unused state.
   script/setup
 
 else
 
   export RAILS_ENV="test" RACK_ENV="test"
 
+  # Ensure everything in the app is up to date.
   script/update
 
 fi

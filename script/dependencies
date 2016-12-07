@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Ensure all dependencies are installed locally.
+
 
 set -e
 
@@ -7,6 +9,5 @@ set -e
 cd "$(dirname "$0")/.."
 
 
-## Ensures all dependencies are installed locally.
 echo "===>>> Installing gem dependencies..."
 bundle install --without production

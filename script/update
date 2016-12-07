@@ -6,10 +6,10 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-
+# Ensure all dependencies are installed locally.
 script/dependencies
 
 
-## Run all database migrations to ensure everything is up to date.
+# Run all database migrations to ensure everything is up to date.
 echo "===>>> Updating DB..."
 bin/rake db:create db:migrate
