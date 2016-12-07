@@ -14,11 +14,11 @@
  *= require_self
  */
 
-@import url('//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic'); 
+@import url('//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
 
 
 body {
-  background: url("intro-bg.jpg");
+  background: image-url("intro-bg.jpg");
   background-size: cover;
   background-position: center;
 }
