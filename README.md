@@ -27,3 +27,45 @@ Your submission will be evaluated against the following criteria:
 ## Submission
 
 To submit your work, please deploy your application to [Heroku](https://heroku.com) using the free tier and email us a link to your app deployed in production along with a link to your repository to let us know you're ready to have us take a look at your code.
+
+## Get started
+
+### 1. Installing a Local Server
+
+* First, you need to install Ruby 2.3.3
+* Next, you need to have PostgreSQL installed
+* Now, let's install the gems
+```vash
+gem install bundler && rbenv rehash
+```
+
+### 2. Setup the project
+
+* You should have PostgreSQL correctly configured
+* Run the `setup` script:
+```
+script/setup
+```
+* Fill out your `.env` file (created by `script/setup`).
+
+
+#### Testing the application
+
+You can run the specs with:
+```bash
+script/test
+```
+
+You can run the linters (tools that flags suspicious usage in software written in any computer language) with:
+```bash
+script/linter
+```
+
+#### Running the application
+
+You may start the rails server with:
+```bash
+script/server
+```
+
+That's it! You should have a working instance of the project located [here] (http://localhost:3000)
