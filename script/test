@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+cd "$(dirname "$0")/.."
+
+
+echo "===>>> Running tests..."
+
+
+if test -n "$1"; then
+  bin/rspec "$1"
+else
+  bin/rspec
+fi
